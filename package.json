@@ -55,12 +55,10 @@
         "webpack-merge": "^4.2.1"
     },
     "dependencies": {
+        "@syman/ark-ui": "^1.0.32",
         "axios": "^0.18.0",
         "vue": "^2.6.8",
         "vue-router": "^3.0.2",
         "vuex": "^3.1.0"
-    },
-    "peerDependencies": {
-        "burgeon-ui": ">1.0.0"
     }
 }

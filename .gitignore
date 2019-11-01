@@ -4,9 +4,7 @@ node_modules
 .history
 .vscode
 # files
-__test_script__/
-r3.publish/
 dist/
 *.tgz
 # project.config.js
-burgeon-r3-*/
+*.log

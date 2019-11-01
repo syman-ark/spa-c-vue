@@ -8,11 +8,8 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const projectConfig = require('./project.config');
 
-const target = projectConfig.target; // 框架研发网关开启环境
-const proxyLists = ['/p/c'];
-const proxyListsForGateway = ['/ad-app/p/c'];
-const proxyListsForPalmCloud = ['/mboscloud-app'];
-const proxyListsForPalmZx = ['/zhixiao-app'];
+const target = projectConfig.target;
+const proxyLists = [''];
 
 const indexProHtml = path.posix.join('/', 'index.pro.html');
 const indexHtml = path.posix.join('/', 'index.html');
@@ -26,8 +23,7 @@ module.exports = env => ({
     vuex: 'Vuex',
     'vue-router': 'VueRouter',
     axios: 'axios',
-    // 'ag-grid': 'agGrid',
-    'burgeon-ui': 'Ark'
+    '@syman/ark-ui': 'Ark'
   },
   devServer: {
     compress: true,
@@ -41,27 +37,9 @@ module.exports = env => ({
     },
     publicPath: '/',
     proxy: [
-      
       {
         context: proxyLists,
         target
-      }, {
-        context: proxyListsForGateway,
-        target
-      }, {
-        context: proxyListsForPalmCloud,
-        target
-      }, {
-        context: proxyListsForPalmZx,
-        target
-      },
-      {
-        context: '/api',
-        target: 'http://47.99.229.124:9093' // 打印
-      },
-      {
-        context: '/jflow',
-        target: 'http://47.99.229.124:18080' // 重新占单
       }]
   },
   target: 'web',
@@ -127,9 +105,6 @@ module.exports = env => ({
     ],
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      filename: 'r3.css',
-    }),
     new CleanWebpackPlugin([env && env.production ? 'dist' : 'devDist']),
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
@@ -139,13 +114,6 @@ module.exports = env => ({
       inject: true,
       favicon: projectConfig.projectIconPath,
     }),
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, './static'),
-        to: 'static',
-        ignore: ['.*'],
-      },
-    ]),
   ],
   mode: env && env.production ? 'production' : 'development',
   resolve: {
