@@ -1,6 +1,6 @@
 <template>
   <h1>
-    Wish You Happy With Ark.
+    Are You Ready?
   </h1>
 </template>
 
