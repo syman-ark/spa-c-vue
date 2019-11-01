@@ -1,7 +1,9 @@
 <template>
-  <h1>
-    Are You Ready?
-  </h1>
+  <div>
+    <h1>
+      Are You Ready?
+    </h1>
+  </div>
 </template>
 
 <script>
