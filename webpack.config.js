@@ -23,7 +23,7 @@ module.exports = env => ({
     vuex: 'Vuex',
     'vue-router': 'VueRouter',
     axios: 'axios',
-    '@syman/ark-ui': 'Ark'
+    // '@syman/ark-ui': 'Ark'
   },
   devServer: {
     compress: true,

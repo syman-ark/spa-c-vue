@@ -4,6 +4,7 @@ import axios from 'axios';
 import router from './src/config/router.config';
 import store from './src/config/store.config';
 import App from './src/App';
+import '@syman/ark-ui/dist/styles/ark-ui.css';
 
 Vue.use(ArkUI);
 const createDOM = () => {
