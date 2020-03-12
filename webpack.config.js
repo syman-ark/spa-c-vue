@@ -70,7 +70,7 @@ module.exports = env => ({
       {
         test: /\.(sa|sc|c|le)ss$/,
         use: [{
-          loader: env && env.production ? MiniCssExtractPlugin.loader : 'style-loader',
+          loader: 'style-loader',
         }, {
           loader: 'css-loader',
         }, {
@@ -114,6 +114,13 @@ module.exports = env => ({
       inject: true,
       favicon: projectConfig.projectIconPath,
     }),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, './static'),
+        to: 'static',
+        ignore: ['.*'],
+      },
+    ]),
   ],
   mode: env && env.production ? 'production' : 'development',
   resolve: {

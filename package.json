@@ -4,8 +4,7 @@
     "description": "A Single Page Application For Vue",
     "scripts": {
         "start": "webpack-dev-server --progress --env.develop",
-        "build": "webpack --color --progress --config webpack.config.js --env.production",
-        "build:publish": "webpack --color --progress --config webpack.publish.js"
+        "build": "webpack --color --progress --config webpack.config.js --env.production"
     },
     "repository": {
         "type": "git",
